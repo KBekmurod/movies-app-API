@@ -3,7 +3,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { CiBellOn, CiUser, CiSearch } from "react-icons/ci";
 
-
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
 
@@ -18,11 +17,11 @@ const Header = () => {
         window.addEventListener("scroll", handleScrolled);
         
         return () => window.removeEventListener("scroll", handleScrolled);
-    })
+    }, [])
   return (
     <header className={`${scrolled && 'bg-[#e10856]'} `}>
         <div className="flex item-center space-x-2 md:space-x-10">
-            <Image src="/logo.svg" alt="logo" width={56} height={56} className="cursor-pointer object-contain"/>
+            <Image src="/logo.svg" alt="logo" width={53} height={53} className="cursor-pointer object-contain"/>
 
         <ul className="space-x-4 items-center md:flex hidden">  
             <li className="navLink">Home</li>
@@ -33,11 +32,11 @@ const Header = () => {
         </ul>
         </div>  
         <div className="flex items-center space-x-4 text-sm font-light">
-            <CiSearch className="h-8 w-8 cursor-pointer" />
+            <CiSearch className="h-5 w-5 cursor-pointer md:h-8 md:w-8"/>
             <p className="hidden lg:inline">Kids</p>
-            <CiBellOn className="h-8 w-8 cursor-pointer"/>
+            <CiBellOn className="h-5 w-5 cursor-pointer md:h-8 md:w-8"/>
             <Link href={"/account"}>
-                <CiUser className="h-8 w-8 cursor-pointer" />
+                <CiUser className="h-5 w-5 cursor-pointer md:h-8 md:w-8" />
             </Link>
         </div>
     </header>
