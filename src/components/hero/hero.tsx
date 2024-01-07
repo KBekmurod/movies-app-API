@@ -12,7 +12,6 @@ const Hero = ({trending}: HeroProps) => {
     const randomMovies = trending[Math.floor(Math.random() * trending.length)];
     setmovie(randomMovies);
   }, [trending]);
-  console.log(movie);
   return (
     <div className="flex flex-col space-y-2 py-16 md:space-y-4 lg:h-[65vh] lg:justify-center lg:pb-12 lg:space-x-10">
       <div className="absolute left-0 top-0 -z-10 w-full h-[95vh]">
@@ -23,8 +22,7 @@ const Hero = ({trending}: HeroProps) => {
         className="object-cover"
         />
     </div>
-    <div 
-    className="text-center py-[4px] px-[8px] bg-[#1b1b1b]/50 rounded-bl-[8px] rounded-tr-[8px] p-4 w-[111px]">
+    <div className='py-[4px] px-[8px] text-center rounded-bl-[8px] rounded-tr-[8px] bg-[#e5e5e5]/50 w-[111px]'>
       {movie.media_type}
     </div>
     <div className="flex items-center space-x-2">

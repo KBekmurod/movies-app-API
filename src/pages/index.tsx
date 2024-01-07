@@ -19,12 +19,13 @@ export default function Home( { trending, top_rated }: homeProps) {
       </Head>
       <Header />
       <Hero trending={trending} />
-      <Row top_rated={top_rated} />
+      <section>
+        <Row title='Top roted' movies={top_rated} />
+      </section>
       <TailwindIndicator />
     </div>
   )
 }
-
 export const getServerSideProps: GetServerSideProps<homeProps> = async () => {
  const trending = await fetch(API_REQUEST.trending).then(res => res.json());
  const top_rated = await fetch(API_REQUEST.top_rated).then(res => res.json());
