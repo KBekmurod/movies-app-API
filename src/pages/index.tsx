@@ -1,12 +1,12 @@
-import { Inter } from 'next/font/google';
+
 import { Header, Hero, Row } from '../components';
 import { TailwindIndicator } from '../components/taiwindIndecator';
 import { GetServerSideProps } from 'next';
+import { useContext } from 'react';
 import { API_REQUEST } from '@/services/api.service';
 import { IMovie } from '@/interfaces/app.interfaces';
 import Head from 'next/head';
-
-const inter = Inter({ subsets: ['latin'] })
+import { AuthContext } from '@/components/context/auth.context';
 
 export default function Home( { 
   trending,
@@ -17,6 +17,10 @@ export default function Home( {
 	family,
 	history,
 	comedy, }: homeProps) {
+    const { isLoading } = useContext(AuthContext);
+
+	  if (isLoading) return <>{null}</>;
+
   return (
     <div className='relative min-h-screen'>
       <Head>
