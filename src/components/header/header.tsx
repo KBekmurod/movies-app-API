@@ -6,7 +6,7 @@ import { BiBellMinus } from 'react-icons/bi';
 import { CiSearch, CiBellOn, CiUser } from'react-icons/ci';
 import { AuthContext } from "../context/auth.context";
 
-const Header = () => {  
+const Header = () => {
     const [scrolled, setScrolled] = useState(false);
     const { logout } = useContext(AuthContext);
     useEffect(() => {

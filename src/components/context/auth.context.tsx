@@ -17,7 +17,7 @@ interface AuthContextState {
 export const AuthContext = createContext<AuthContextState>({
 	user: null,
 	error: '',
-	isLoading: true,
+	isLoading: false,
 	signIn: async () => {},
 	signUp: async () => {},
 	logout: async () => {},
